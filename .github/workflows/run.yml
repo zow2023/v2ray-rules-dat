@@ -104,7 +104,7 @@ jobs:
         run: |
           curl -L --retry 3 --fail-with-body "$ADRULES_DNS_URL" -o adrules-dns.txt
           python3 scripts/parse_adguard_ls.py adrules-dns.txt ./community/data/custom-ads adrules-conversion-report.txt
-          cp ./community/data/custom-ads custom-ads.txt
+          cp ./community/data/custom-ads custom-ads-list.txt
           test -s ./community/data/custom-ads
 
       - name: Reserve `full`, `regexp` and `keyword` type of rules from custom lists to "reserve" files
